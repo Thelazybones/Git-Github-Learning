@@ -1,0 +1,102 @@
+1.How you will come to know if the branch has already been merged into master or not ?
+Ans- There are 3 commands we can use to get info related the same --
+	a. git branch --merged master (list branches merged into master)
+	b. git branch --merged (list branches merged into HEAD)
+	c. git branch --no-merged (list branches that have not been merged) 
+	
+2.How to branch both locally and remotely ?
+Ans- to delete the Local Branch we can use - git branch -d <branch name>
+	 to delete the Remote Branch we can use - git push <remote_name> --delete<branch_name>
+
+3.How can you fix a broken commit?
+Ans- We can use git commit --amend	
+
+4.why it is advaisable to create an additional commit rather than amending an existing commit?
+Ans- a. The amend operation will distroy the state that was previously saved in a commit. If its just the commit message being changed then no problem but if the contents are being changed then there chances of eliminating something important.
+ 
+5.Accidently deleted a branch and has already pushed the changes to central repo. There is no other git repo and non of the other people has the local copy.
+Ans - We ca recover the branch using - git reflog , and then check it out as a new branch using command - git checkout -b (name)
+
+6.Git Fetch and git Pull
+Ans- Git fetch only inform the latest changes to remote repo but it will not copy the changes to your local repo. Wherein git Pull will both the things at go.
+
+7.Git Merge and git rebase
+Ans- 
+
+8. What is .git and .gitignore ?
+Ans- .git contents everything for your repo , in gitignore you can add files which you want not be there in commit.
+
+9.What is hooks , pre-commit hooks and post-commit hooks ?
+Ans- A hook is something you want to perform before and after the commits , that called hooks.
+     Pre-commit hook - Lets say you always to commits and do not want to take a risk of commiting sensitive info like public keys , password anything so you can configure the pre-commit hook. What it will is before commiting anything it will run a script and check for any sensitive info you have configured and if any it will prevent that form getting commitited.
+	 
+10.What is a webhook ?
+Ans-
+
+11.What is git stash ?
+	 Basically git stashwe will use when we are on multiple changes and working on different file at the same time.So let say you are working on file and its half done and you do not want to commit it now since you have to work in different issue on different file , then you can use git stash- will save it temporary and later you can come and do git stash pop up.
+
+12.What is git clone and git fork ?
+Ans- remote copy of repo into local laptop that can be done by git clone. Git fork is something you want the same repo to get into your repo list of your GitHub account.
+
+13.What is cherry-pick in git ?
+Ans-  if you want to copy the changes/ commits form one branch to other you can use the cherry-pick so it will copy the all commits to branch if there is no conflits.
+
+14.What is amend a commit in git ?
+Ans- Let say you did a commit and that is a wrong commit , or after commit you want to make a change in that , or you want to fix a broken commit then we can use the git --amend.
+
+15. How do you resolve a merge conflict in git ?
+Ans- Depends on the merge - 
+		A. check who has done the commit and check what can be done to that commit.
+		B. once you identify the commit details , we can do git merge --abort or you got to know what can be added or remove to fix that , we can do git merge --restore.
+		
+-----------------------------------------
+
+Tips and Trick 
+----
+
+1. git ADD > git commit -  Generally we will first add the file and then do commit		
+Trick- if you want to add all the changes /all the files at oncce we can use - git commit -am "comment"
+
+2. Git alias (we can give shorter name to git commands )
+Trick- git config --global alias.chandan "commit -am"
+
+3. Git amend - Generelly we will use this tp fix the last or broken commit.
+Trick- if you want to add file you missed in last commit , add the files , you want to chnage the name for commit 
+	git commit --amend -m "new comment" 
+	git commit --amend --no-edit (if you want to go with the same commit message)
+	
+4. Undo a commit with a new commit- let say you pushed something to remote repo and you do not want anymore
+Trick- git revert better days
+	   git log --online (show the commit head /ID
+	   git revert comitid
+		git log --online
+		
+5. Git stash - sometimes happens that you almost done with the code and about to commit & push but you got something more urgent to do.
+Trick- You can use git stash and save the working file and do it later on.
+		git stash (this will remove the changes from currect working directory and save it for later use.
+		git stash pop (use this command when you are ready to work and comit)
+		git stash save name (you can give a name to that stash file to identify later)
+		git stash list (will show you the saved stash file )
+		git stash apply indexnumber
+
+ 		
+6. Git log - basically this will give you the complete log for the commits but this will be huge list
+			git log 
+			git log --graph --online --decorate
+			
+7. To get the faulty commit form where the application stopped working 
+Trick- you can use the git bisect (will give you the commit from where the issue started )
+		git bisect start
+		git bisect bad
+		git bisect good
+		
+8. SQUASH
+Trick- 
+
+9. At some point you did some mesh with your local copy of remote repo and you want to go back to the original remote repo state
+Trick- you can use git fetch origin (perform this first then)
+				   git reset --hard origin/master (this will get you back to remote repo state but you will loose your working /changes made)
+				   git clean -df
+
+10. Git branch - (this will let you know the last branch name you were)
