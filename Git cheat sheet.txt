@@ -4,7 +4,7 @@ Ans- There are 3 commands we can use to get info related the same --
 	b. git branch --merged (list branches merged into HEAD)
 	c. git branch --no-merged (list branches that have not been merged) 
 	
-2.How to branch both locally and remotely ?
+2.How to delete a branch both locally and remotely ?
 Ans- to delete the Local Branch we can use - git branch -d <branch name>
 	 to delete the Remote Branch we can use - git push <remote_name> --delete<branch_name>
 
@@ -34,7 +34,7 @@ Ans- A hook is something you want to perform before and after the commits , that
 Ans-
 
 11.What is git stash ?
-	 Basically git stashwe will use when we are on multiple changes and working on different file at the same time.So let say you are working on file and its half done and you do not want to commit it now since you have to work in different issue on different file , then you can use git stash- will save it temporary and later you can come and do git stash pop up.
+	 Basically git stash we will use when we are on multiple changes and working on different file at the same time.So let say you are working on file and its half done and you do not want to commit it now since you have to work in different issue on different file , then you can use git stash- will save it temporary and later you can come and do git stash pop up.
 
 12.What is git clone and git fork ?
 Ans- remote copy of repo into local laptop that can be done by git clone. Git fork is something you want the same repo to get into your repo list of your GitHub account.
